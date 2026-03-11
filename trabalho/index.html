@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalho: Explorando a Web</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; }
+        section { margin-bottom: 30px; border-bottom: 1px solid #ccc; padding-bottom: 20px; }
+        .resultado { margin-top: 20px; padding: 10px; background: #f4f4f4; border-left: 5px solid #2ecc71; display: none; }
+        input, select, button { padding: 8px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Explorando a Web na Prática</h1>
+
+    <!-- PARTE 1: Página Explicativa -->
+    <section>
+        <h2>Parte 1 - Conceitos</h2>
+        
+        <h3>O que é HTTP?</h3>
+        <p>Escreva aqui sua explicação (4 a 6 linhas). Dica: É o protocolo base para troca de dados na web.</p>
+
+        <h3>O que é HTTPS?</h3>
+        <p>Escreva aqui sua explicação. Dica: É a versão segura do HTTP, que usa criptografia.</p>
+
+        <h3>O que é Cliente?</h3>
+        <p>Escreva aqui sua explicação. Dica: Geralmente é o navegador que solicita os dados.</p>
+
+        <h3>O que é Servidor?</h3>
+        <p>Escreva aqui sua explicação. Dica: É o computador remoto que armazena e envia os sites.</p>
+    </section>
+
+    <!-- PARTE 2: Simulador de Requisição -->
+    <section>
+        <h2>Parte 2 - Simulador de Requisição</h2>
+        <form id="simuladorForm">
+            <label for="metodo">Método:</label><br>
+            <select id="metodo">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+            </select><br>
+
+            <label for="url">URL:</label><br>
+            <input type="text" id="url" placeholder="https://exemplo.com" style="width: 80%;" required><br>
+
+            <button type="button" onclick="simular()">Simular Requisição</button>
+        </form>
+
+        <div id="resultado" class="resultado">
+            <strong>Resultado da Simulação:</strong>
+            <p id="textoResultado"></p>
+        </div>
+    </section>
+
+    <script>
+        function simular() {
+            // Pega os valores digitados pelo usuário
+            const metodo = document.getElementById('metodo').value;
+            const url = document.getElementById('url').value;
+
+            // Formata o texto para exibir na tela
+            const mensagem = `Método: ${metodo} URL: ${url}`;
+
+            // Exibe a div de resultado e coloca o texto nela
+            const divResultado = document.getElementById('resultado');
+            document.getElementById('textoResultado').innerText = mensagem;
+            divResultado.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
